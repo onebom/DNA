@@ -1,0 +1,31 @@
+<!doctype html>
+
+<html>
+<title>Ajax test</title>
+<head>
+<body>
+	<div id="datetime"></div>
+	<div id="backflow_minute"></div>
+	<div id="distance_minute"></div>
+	<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+	<script type="text/javascript">
+		$( document ).ready(function() {
+			function test(){
+				$.ajax({
+					url: "http://127.0.0.1:3000/backflow",
+					type: "GET",	
+					data: {},
+					dataType:'jsonp',
+				}).success(function(result){
+					$("#datetime").html(result.datetime);
+					$("#backflow_minute").html(result.backflow_minute);
+                    $("#distance_minute").html(result.distance_minute);
+				});
+            } 
+			test();
+			setInterval(test,1000);
+			});
+	</script>
+</body>
+</head>
+</html>

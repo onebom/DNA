@@ -1,0 +1,84 @@
+<!doctype html>
+
+<html>
+<title>Ajax test</title>
+<head>
+<body>
+	<div id="datetime"></div>
+	<div id="counting"></div>
+	<div id="pretime"></div>
+	<td class="jb-th-1 fs-3 fw-bold text-center"><b>1분 전 카운팅<b>:</b>
+	<div id="pre_count" style="display:inline;"></div><br>
+	<td class="jb-th-1 fs-3 fw-bold text-center"><b>현재 시각<b>:</b>
+	<div id="clock" style="display:inline;"></div><br>
+	<td class="jb-th-1 fs-3 fw-bold text-center"><b>경과 시각<b>:</b>
+	<div id="passtime" style="display:inline;"></div>(sec)
+	<div id="curtime"></div>
+	<td class="jb-th-1 fs-3 fw-bold text-center"><b>현재 카운팅<b>:</b>
+	<div id="cur_count" style="display:inline;"></div><br>
+	<td class="jb-th-1 fs-3 fw-bold text-center"><b>현재 주입량<b>:</b>
+	<div id="cur_amount" style="display:inline;"></div>(cc)<br>
+	<td class="jb-th-1 fs-3 fw-bold text-center"><b>예상 주입량<b>:</b>
+	<div id="pre_amount" style="display:inline;"></div>(cc)<br>
+	<td class="jb-th-1 fs-3 fw-bold text-center"><b>주입량 차<b>:</b>
+	<div id="dif_amount" style="display:inline;"></div>(cc)<br>
+
+	<td class="jb-th-1 fs-3 fw-bold text-center"><b>현재 주입속도<b>:</b><br>
+	<div id="gtt" style="display:inline;"></div>(gtt/min)<br>
+	<div id="cc" style="display:inline;"></div>(cc/hr)<br>
+	<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+	<script type="text/javascript">
+
+		$( document ).ready(function() {
+			function test(){
+				$.ajax({
+					url: "http://127.0.0.1:3000/counting",
+					type: "GET",	
+					data: {},
+					dataType:'jsonp',
+				}).success(function(data){
+					passtime+=1;
+					$("#cur_count").html(data.counting);
+					var cur_count=parseInt(data.counting);
+					$("#cur_amount").html(((data.counting)*0.05).toFixed(2));
+					var cur_amount=parseFloat(((data.counting)*0.05).toFixed(2));
+					$("#passtime").html(passtime);
+					$("#pre_amount").html(((0.25*passtime)*0.05).toFixed(2));
+					pre_amount=parseFloat(((0.25*passtime)*0.05).toFixed(2));
+					$("#dif_amount").html((cur_amount-pre_amount).toFixed(2));
+					setTimeout(() => $("#pre_count").html(data.counting), 60000);
+					pre_count=parseInt(data.counting);
+					setTimeout(() => $("#gtt").html((pre_count-cur_count)), 60000);
+					setTimeout(() => $("#cc").html((pre_count-cur_count)*3), 60000);
+				}); 
+			 }
+			var passtime = 0;
+			test();
+			setInterval(test,1000);
+			});
+
+	var Target = document.getElementById("clock");
+	function clock() {
+		var time = new Date();
+
+		var year = time.getFullYear();
+		var month = time.getMonth();
+		var date = time.getDate();
+		var day = time.getDay();
+		var week = ['SUN', 'MON', 'TUE', 'WED', 'THU', 'FRI', 'SAT'];
+
+		var hours = time.getHours();
+		var minutes = time.getMinutes();
+		var seconds = time.getSeconds();
+
+		Target.innerText = 
+		`${year}.${(month+1) < 10 ? `0${month+1}` : month+1}.${date < 10 ? `0${date}` : date} ${week[day]} ` +
+		`${hours < 10 ? `0${hours}` : hours}:${minutes < 10 ? `0${minutes}` : minutes}:${seconds < 10 ? `0${seconds}` : seconds}`;
+			
+	}
+	clock();
+	setInterval(clock, 1000); // 1초마다 실행
+	</script>
+</body>
+</head>
+</html>

@@ -1,0 +1,50 @@
+<!doctype html>
+
+<html>
+<title>Ajax test</title>
+<head>
+<body>
+	<div id="datetime"></div>
+	<div id="counting"></div>
+	<div id="pretime"></div>
+	<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+	<script type="text/javascript">
+		$( document ).ready(function() {
+			// var pretime;
+			// var curtime;
+			// var precount;
+			// var curcount;
+
+			function test(){
+				$.ajax({
+					url: "http://127.0.0.1:3000/counting",
+					type: "GET",	
+					data: {},
+					dataType:'jsonp',
+				}).success(function(data){
+					$("#datetime").html(data.datetime);
+					$("#counting").html(data.counting);
+				}); 
+			 }
+
+			//  function gtt() {
+			// 	$.ajax({
+			// 		url: "http://127.0.0.1:3000/",
+			// 		type: "GET",	
+			// 		data: {datetime: data.datetime-10},
+			// 		dataType:'jsonp',
+			// 	}).done(function(data){
+			// 		$("pretime").html(data.datetime);					
+			// 	}); 
+			// }
+
+			test();
+			setInterval(test,1000);
+
+			gtt();
+			setInterval(gtt,1000);
+			});
+	</script>
+</body>
+</head>
+</html>

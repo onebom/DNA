@@ -1,0 +1,408 @@
+<html>
+    <head lang="ko">
+        <title>MotorTest</title>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <!-- Favicon-->
+        <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+        <!-- Bootstrap icons-->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="css/styles.css" rel="stylesheet" />
+        <!-- 제이쿼리 불러오기 -->
+        <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+
+        <style>
+            .table
+            {
+                border: 1px solid #af1717;
+	            border-color: blue;
+            }
+
+            .auto-style2
+            {
+	        border: 1px solid #008080;
+            }
+            #circle{
+            background-color: red;
+            width:100px;
+            height:100px;
+            border-radius: 50px;
+            }
+            div.circle1
+            {
+	        background-color: green;
+	        width:  30px;
+        	height: 5px;
+	        border-radius: 50%;
+	        box-shadow: 0 0 2px rgb(100,100,100);
+            }
+            div.circle2
+            {
+                background-color: rgb(226, 224, 102);
+                width:  30px;
+                height: 5px;
+                border-radius: 50%;
+                box-shadow: 0 0 2px rgb(100,100,100);
+            }
+            div.circle3
+            {
+                background-color: orange;
+                width:  30px;
+                height: 5px;
+                border-radius: 50%;
+                box-shadow: 0 0 2px rgb(100,100,100);
+            }
+            div.circle4
+            {
+                background-color: rgb(212, 240, 120);
+                width:  30px;
+                height: 5px;
+                border-radius: 50%;
+                box-shadow: 0 0 2px rgb(100,100,100);
+            }
+            div.left
+            {
+                width: 20%;
+                height: all;
+                float: left;
+                box-sizing: border-box;
+                background: hsl(260, 57%, 91%);
+            }
+            div.middle
+            {
+                width: 70%;
+                height: all;
+                float: middle;
+                box-sizing: border-box;
+                background:hsl(0, 47%, 96%);
+            }
+            div.right
+            {
+                width: 20%;
+                height: all;
+                float: right;
+                box-sizing: border-box;
+                background: hsl(215, 100%, 97%);
+            }
+        </style>
+        <script>
+            function Info_btnClick()
+            {
+                
+            }
+        </script>
+    </head>
+    <body>
+        <!-- Responsive navbar-->
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        
+            <a class="navbar-brand col-lg-4 px-lg-5 fs-2" href="#!">간호투약수행기록[VMCNRDA003S]</a>
+        
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                </ul>
+                </div>
+            </div>
+        </nav> 
+        <!-- 왼쪽 페이지 -->
+        <div class="left">
+            <!-- Page Content-->
+            <section class="pt-4">
+                <div class="container px-lg-10">
+
+                    <div class="mb-3"></div>
+                    <div class="container px-lg-5">
+                    <div class="card-body text-center rounded-5 bg-light border-2">
+                        <div class="feature rounded-5 mb-3 mt-n5 w-100"><i class="btn btn-primary btn-lg fst-normal fs-2 fw-bold" href="#!" onClick="Info_btnClick()" >N2014350 나허약 남/27세</i></div>
+                            <p class="fs-3 fw-bold">담당의: 김간호</p>
+                            <p class="fs-3 fw-bold">진단명: 폐렴</p>
+                            <p class="fs-3 mb-">A병동 201호 No.1</p>
+                        </div>
+                    </div>
+                
+                    <div class="mb-5"></div>
+                    <div class="container px-lg-5">
+                    <div class="card-body text-center rounded-5 bg-light border-2">
+                        <div class="feature rounded-5 mb-3 mt-n5 w-100"><i class="btn btn-primary btn-lg fst-normal fs-2 fw-bold" href="#!" onClick="location.href='frame2.html'" >N2064544 나아픔 남/25세</i></div>
+                            <p class="fs-3 fw-bold">담당의: 김간호</p>
+                            <p class="fs-3 fw-bold">진단명: 역류성 식도염</p>
+                            <p class="fs-3 mb-">A병동 201호 No.2</p>
+                        </div>
+                    </div>
+
+                    <div class="mb-5"></div>
+                    <div class="container px-lg-5">
+                    <div class="card-body text-center rounded-5 bg-light border-2">
+                        <div class="feature rounded-5 mb-3 mt-n5 w-100"><i class="btn btn-primary btn-lg fst-normal fs-2 fw-bold" href="#!" onClick="location.href='frame2.html'" >N2478155 나입원 여/28세</i></div>
+                            <p class="fs-3 fw-bold">담당의: 김간호</p>
+                            <p class="fs-3 fw-bold">진단명: 만성 기관지염</p>
+                            <p class="fs-3 mb-">A병동 201호 No.2</p>
+                        </div>
+                    </div>
+
+                    <div class="mb-5"></div>
+                    <div class="container px-lg-5">
+                    <div class="card-body text-center rounded-5 bg-light border-2">
+                        <div class="feature rounded-5 mb-3 mt-n5 w-100"><i class="btn btn-primary btn-lg fst-normal fs-2 fw-bold" href="#!" onClick="location.href='frame2.html'" >N3541651 나골절 남/60세</i></div>
+                            <p class="fs-3 fw-bold">담당의: 김의사</p>
+                            <p class="fs-3 fw-bold">진단명: 당뇨</p>
+                            <p class="fs-3 mb-">A병동 201호 No.3</p>
+                        </div>
+                    </div>
+                
+                
+                    <div class="mb-5"></div>
+                    <div class="container px-lg-5">
+                    <div class="card-body text-center bg-light rounded-5 border-2">
+                        <div class="feature rounded-5 mb-3 mt-n5 w-100"><i class="btn btn-primary btn-lg fst-normal fs-2 fw-bold" href="#!" onClick="location.href='frame2.html'" >N5715454 나염증 여/52세</i></div>
+                            <p class="fs-3 fw-bold">담당의: 김의사</p>
+                            <p class="fs-3 fw-bold">진단명: 심부전증</p>
+                            <p class="fs-3 mb-">A병동 201호 No.4</p>
+                        </div>
+                    </div>
+
+                    <div class="mb-5"></div>
+                    <div class="container px-lg-5">
+                    <div class="card-body text-center  rounded-5 bg-light border-2">
+                        <div class="feature rounded-5 mb-3 mt-n5 w-100"><i class="btn btn-primary btn-lg fst-normal fs-2 fw-bold" href="#!" onClick="location.href='frame2.html'" >N1451514 나아픔 남/38세</i></div>
+                            <p class="fs-3 fw-bold">담당의: 김의사</p>
+                            <p class="fs-3 fw-bold">진단명: 골절 및 탈골</p>
+                            <p class="fs-3 mb-">A병동 201호 No.5</p>
+                        </div>
+                    </div>
+                    
+                    <div class="col-lg-6 col-xxl-6 mb-5"></div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+
+
+
+
+        <!-- 가운대 페이지 -->
+        <div class="middle">
+            <!-- Page Content-->
+            <div class="mb-5"></div>
+                    <div class="container px-lg-5">
+                    <div class="card-body text-center rounded-5 bg-light border-2">
+                        <div class="feature rounded-5 mb-3 mt-n5 w-100"><i class="btn btn-primary btn-lg fst-normal fs-2 fw-bold" href="#!" onClick="location.href='frame2.html'" >N2064544 나아픔 남/25세</i></div>
+                            <p class="fs-3 fw-bold">담당의: 김간호</p>
+                            <p class="fs-3 fw-bold">진단명: 역류성 식도염</p>
+                            <p class="fs-3 mb-">A병동 201호 No.2</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-xxl-6 mb-5"></div>
+                    </div>
+                </div>
+            </section>
+        </div>
+        
+
+
+
+
+
+
+
+
+        <!-- 오른쪽 페이지-->
+        <div class="right">
+            <!-- Page Content-->
+            <center>
+                <br>
+                <table style="border:2px solid #305574;" cellpadding=9 cellspacing=9>
+                        <tbody> 
+                            <tr rowspan="2"> 
+                                <td align="center" style = "vertical-align:top"><b><font size="5">역류 상태 </font></b><b><font size="6">:</font><b></td>
+                                <td align="center" style = "vertical-align:middle"><canvas id = "myCanvas" width="46" height="46"></canvas></td>
+                            </tr>                           
+                                <td colspan="2" align="center" style="border:1px solid #305574;"><font size="2"></font>경고 시간<font size="4"> : </font>
+                                    <b><div style='display:inline' id="backflow"></div></b><font size="2">(분)</font></td>
+                                    <!-- <font size="2">설정 시간</font><font size="3">:</font></b>
+                                    <input type="text" id="time" style="width:30px; height:20px; font-size:15px;" align="center"/><font size="2"> (분)</font></td>             -->
+                            <tr rowspan="2"> <td align="center" style="vertical-align:top"><b><font size="5">부착 상태 </font></b><b><font size="6">:</font><b></b></td>
+                                <td align="center" style = "vertical-align:middle"><canvas id = "myCanvas2" width="46" height="46"></canvas></td></tr>
+                                <td colspan="2" align="center" style="border:1px solid #305574;">경고 시간<font size="4"> : </font>
+                                    <b><div style='display:inline' id="distance"></div></b><font size="2">(분)</font></td>
+                        </tbody>
+                </table>
+                <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+	            <script type="text/javascript">
+                    $( document ).ready(function() {
+                            function test()
+                            {
+                                $.ajax({
+                                    url: "http://127.0.0.1:3000/backflow",
+                                    type: "GET",	
+                                    data: {},
+                                    dataType:'jsonp',
+                                }).success(function(result){
+                                    $("#backflow").html(result.backflow_minute);
+                                    $("#distance").html(result.distance_minute);
+                                    backflow = parseInt(result.backflow_minute);
+                                    distance = parseInt(result.distance_minute);
+
+                                    if (backflow == 0) 
+                                    {
+                                        var canvas = document.getElementById('myCanvas');
+                                        var ctx = canvas.getContext("2d");
+                                        ctx.beginPath();
+                                        ctx.arc(22, 22, 21, 0, 2*Math.PI);
+                                        ctx.stroke();
+                                        ctx.fillStyle = 'green';
+                                        ctx.strokeStyle = 'green'; 
+                                        ctx.fill();
+                                            
+                                    }
+                                    else if(backflow >=1 && backflow <=5) 
+                                    {
+                                        var canvas = document.getElementById('myCanvas');
+                                        var ctx = canvas.getContext("2d");
+                                        ctx.beginPath();
+                                        ctx.arc(22, 22, 21, 0, 2*Math.PI);
+                                        ctx.stroke();
+                                        ctx.fillStyle = 'rgb(226,224,102)';
+                                        ctx.strokeStyle = 'rgb(226,224,102)'; 
+                                        ctx.fill();  
+                                    } 
+                                    else if(backflow >=5 && backflow < 10)
+                                    {
+                                        var canvas = document.getElementById('myCanvas');
+                                        var ctx = canvas.getContext("2d");
+                                        ctx.beginPath();
+                                        ctx.arc(22, 22, 21, 0, 2*Math.PI);
+                                        ctx.stroke();
+                                        ctx.fillStyle = 'orange';
+                                        ctx.strokeStyle = 'orange'; 
+                                        ctx.fill();  
+                                    }
+                                    else if(backflow > 10)
+                                    {
+                                        var canvas = document.getElementById('myCanvas');
+                                        var ctx = canvas.getContext("2d");
+                                        ctx.beginPath();
+                                        ctx.arc(22, 22, 21, 0, 2*Math.PI);
+                                        ctx.stroke();
+                                        ctx.fillStyle = 'red';
+                                        ctx.strokeStyle = 'red';
+                                        ctx.fill();  
+                                    }
+
+                                    if (distance == 0) 
+                                    {
+                                        var canvas = document.getElementById('myCanvas2');
+                                        var ctx = canvas.getContext("2d");
+                                        ctx.beginPath();
+                                        ctx.arc(22, 22, 21, 0, 2*Math.PI);
+                                        ctx.stroke();
+                                        ctx.fillStyle = 'green';
+                                        ctx.strokeStyle = 'green';
+                                        ctx.fill();    
+                                    }
+                                    else if(distance >=1 && distance <=3) 
+                                    {
+                                        var canvas = document.getElementById('myCanvas2');
+                                        var ctx = canvas.getContext("2d");
+                                        ctx.beginPath();
+                                        ctx.arc(22, 22, 21, 0, 2*Math.PI);
+                                        ctx.stroke();
+                                        ctx.fillStyle = 'orange';
+                                        ctx.strokeStyle = 'orange';
+                                        ctx.fill();  
+                                    } 
+                                    else if(distance > 3)
+                                    {
+                                        var canvas = document.getElementById('myCanvas2');
+                                        var ctx = canvas.getContext("2d");
+                                        ctx.beginPath();
+                                        ctx.arc(22, 22, 21, 0, 2*Math.PI);
+                                        ctx.stroke();
+                                        ctx.fillStyle = 'red';
+                                        ctx.strokeStyle = 'red';
+                                        ctx.fill();  
+                                    }
+                                });
+                            } 
+                            test();
+                        setInterval(test,1000);
+                        });
+	            </script>
+            </center>
+
+
+            <center>            
+                    <br>
+                    <table style="border:2px solid #305574;" cellpadding=5 cellspacing=5>
+                            <tbody>
+                                <tr>
+                                    <td align="left"><b><font size="4">주입 속도</font><b><font size="5">:</font></b>
+                                        <input type="text" id="name" style="width:75px; height:25px; font-size:15px;" align="center"/><font size="3"> (cc/hr)</font>
+                                    </td>
+                                    <td>    
+                                        <input type="submit" id="OK" value="조절/엔터" style = " height:30px"/>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td align="left"><b><font size="4">현재 속도</font><b><font size="5">:</font></b>
+                                        <div type="text" id='speed' style="border:1px solid black; box-sizing:border-box; padding: 1px 20px; text-align:center; font-size:15px; display:inline;"></div><font size="3"> (cc/hr)</font>
+                                    </td>    
+                                </tr>                                
+                            </tbody>
+                    </table>
+                    <script>
+                        $("#OK").click(function()
+                        {
+                            $.ajax(
+                                {
+                                url: '/postTest',
+                                async:true,
+                                type: 'POST',
+                                data: {test : $("#name").val()},  
+                                dataType: 'json',              
+                                success: function(data)
+                                {
+                                    const name = document.getElementById('name').value;
+                                    document.getElementById("speed").innerText = name;
+                                    
+                                },
+                                error: function(err)
+                                {
+                                    alert("전송 실패" + err);
+                                }
+                                });
+                        });
+                        $("#name").keydown(function(key) 
+                        {
+                            if (key.keyCode == 13) 
+                            {
+                                $.ajax(
+                                {
+                                url: '/postTest',
+                                async:true,
+                                type: 'POST',
+                                data: {test : $("#name").val()},  
+                                dataType: 'json',              
+                                success: function(data)
+                                {
+                                    const name = document.getElementById('name').value;
+                                    document.getElementById("speed").innerText = name;
+                                    
+                                },
+                                error: function(err)
+                                {
+                                    alert("전송 실패" + err);
+                                }
+                                });
+                            }
+                        });
+                    </script>          
+            </center>
+    </body>
+    <br>
+</html>
+

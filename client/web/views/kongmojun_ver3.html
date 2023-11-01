@@ -1,0 +1,994 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>Test</title>
+        <!-- Favicon-->
+        <link rel="icon" type="image/x-icon" href="../views/assets/favicon.ico" />
+        <!-- Bootstrap icons-->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="../views/css/stylesh.css" rel="stylesheet" />
+        <style>
+            .table
+            {
+                border: 1px solid #ffebb5; 
+                background-color: #ffebb5; 
+                border-radius: 15px;
+            }
+            .auto-style2
+            {
+	            border: 1px solid #008080;
+            }
+            #circle{
+                background-color: red;
+                width:100px;
+                height:100px;
+                border-radius: 50px;
+            }
+            div.circle1
+            {
+                background-color: green;
+                width:  30px;
+                height: 5px;
+                border-radius: 50%;
+                box-shadow: 0 0 2px rgb(100,100,100);
+            }
+            div.circle2
+            {
+                background-color: rgb(226, 224, 102);
+                width:  30px;
+                height: 5px;
+                border-radius: 50%;
+                box-shadow: 0 0 2px rgb(100,100,100);
+            }
+            div.circle3
+            {
+                background-color: orange;
+                width:  30px;
+                height: 5px;
+                border-radius: 50%;
+                box-shadow: 0 0 2px rgb(100,100,100);
+            }
+            div.circle4
+            {
+                background-color: rgb(212, 240, 120);
+                width:  30px;
+                height: 5px;
+                border-radius: 50%;
+                box-shadow: 0 0 2px rgb(100,100,100);
+            }
+
+            div {
+              width: 100%;
+              height: 100%;
+          
+            }
+            div.left {
+              width: 20%;
+              height: 100vh;
+              float: left;
+              box-sizing: border-box;
+              background: hsl(260, 57%, 91%);
+              
+            }
+            div.mid {
+              width: 60%;
+              height: 100%;
+              float: right;
+              box-sizing: border-box; 
+              /* background: hsl(0, 17%, 92%);              */
+              
+            }
+            div.mid2 {
+              width: 60%;
+              height: 100vh;
+              float: right;
+              box-sizing: border-box; 
+              /* background: hsl(0, 4%, 80%);              */
+              
+            }
+            div.right {
+              width: 20%;
+              height: 100vh;
+              float: right;
+              box-sizing: border-box;
+              background: #F0E7D8; 
+              
+            }
+            
+            .slidecontainer {
+                width: 100%;
+                }
+
+            .slider {
+            -webkit-appearance: none;
+            width: 100%;
+            height: 7px;
+            border-radius: 5px;
+            background: #505050;
+            outline: none;
+            opacity: 0.7;
+            -webkit-transition: .2s;
+            transition: opacity .2s;
+            }
+
+            .slider:hover {
+            opacity: 1;
+            }
+
+            .slider::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%; 
+            background: #0d6efd;
+            cursor: pointer;
+            }
+
+            .slider::-moz-range-thumb {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%; 
+            background: #0d6efd;
+            cursor: pointer;
+            }
+
+        </style>
+
+        <script type="text/javascript">
+            /* 보이기 */
+            var state=document.getElementById("state")
+            function div_show() {
+            state="div_show"
+            document.getElementById("mid").style.display = "block";
+            document.getElementById("mid2").style.display = "none";
+            document.getElementById("right").style.display = "block";
+            }
+            /* 숨기기 */
+            function div_hide() {
+            state="div_hide"
+            document.getElementById("mid").style.display = "none";
+            document.getElementById("mid2").style.display = "block";
+            document.getElementById("right").style.display = "none";
+
+            }
+            function change(){
+                if (state == "div_show"){
+                    div_hide();
+                }
+                else{
+                    div_show();
+                }
+            }
+        </script>
+
+        <script>
+            var count = 0;
+            function setColor(e) {
+            var target = e.target,
+                status = e.target.classList.contains('active');
+            if (count == 0) {
+                e.target.classList.add(status ? 'inactive' : 'active');
+                count = 1;   
+            }
+            else{  
+                e.target.classList.remove(status ? 'active' : 'inactive'); 
+                document.getElementById("mid").style.display = "none";
+                document.getElementById("mid2").style.display = "block";
+                count = 0;
+            }
+        }
+            
+        </script>
+        <script>
+            function selectAll(selectAll)  {
+                const checkboxes 
+                    = document.getElementsByName('box');
+                
+                checkboxes.forEach((checkbox) => {
+                    checkbox.checked = selectAll.checked;
+                })
+                }
+            function selectAll2(selectAll)  {
+                const checkboxes 
+                    = document.getElementsByName('box2');
+                
+                checkboxes.forEach((checkbox) => {
+                    checkbox.checked = selectAll.checked;
+                })
+                }
+        </script>
+
+        <!---hanbom-style--->
+        <style>
+            #time-box {
+                padding: 2%;
+                height: 10vh;
+            }
+            #volumn-box{
+                padding: 5%;
+                height: 28vh;
+            }
+            #speed-box{
+                padding: 5%;
+                height: 15vh;
+            }
+            #video-box{
+                padding: 5%;
+                height: 42vh;
+            }
+            #right_h{
+                height: 1vh;
+                margin-block-end: 0rem !important;
+                margin-block-start: 0rem !important;
+            }
+
+            #time_name {
+                background-color: white;
+                background-position: center;
+
+                width: 60%;
+                border-radius: 30px;
+
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+            #volumn_name {
+                background-color: white;
+                background-position: center;
+
+                width: 60%;
+                border-radius: 30px !important;
+
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+            #speed_name {
+                background-color: white;
+                background-position: center;
+
+                width: 60%;
+                border-radius: 30px !important;
+
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+            .textsDiv {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                flex-direction: row;
+
+            }
+
+
+        </style>
+
+        
+    </head>
+
+
+    <body>
+        <!-- Responsive navbar-->
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">        
+                <a class="navbar-brand col-lg-4 px-lg-5 fs-2" href="#!">간호투약수행기록[VMCNRDA003S]</a>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0 fs-2 me-5">
+                        <li class="nav-item"><a class="nav-link"  onClick='div_hide()' aria-current="page" href="#!">Home</a></li>
+                    </ul>
+                </div>
+                
+        </nav>
+
+
+        <!-- 왼쪽 페이지 -->
+        <div class="left">
+            <!-- Page Content-->
+            <section class="pt-4">
+                <div class="container px-lg-10">                    
+                    <div class="mb-3"></div>
+                    <div class="container px-lg-5">
+                    <div class="card-body text-center rounded-5 bg-light border-2">
+                        <div class="feature rounded-5 mb-3 mt-n5 w-100"><i class="btn btn-primary btn-lg fst-normal fs-2 fw-bold" href="#!" onClick="change();setColor(event);" >N2014350 이허약 남/27세</i></div>
+                            <p class="fs-3 fw-bold">담당의: 김간호</p>
+                            <p class="fs-3 fw-bold">진단명: 폐렴</p>
+                            <p class="fs-3 mb-">A병동 201호 No.1</p>
+                        </div>
+                    </div>
+                
+                    <div class="mb-5"></div>
+                    <div class="container px-lg-5">
+                    <div class="card-body text-center rounded-5 bg-light border-2">
+                        <div class="feature rounded-5 mb-3 mt-n5 w-100"><i class="btn btn-primary btn-lg fst-normal fs-2 fw-bold" href="#!" onClick='change();setColor(event);' >N2064544 설골절 남/25세</i></div>
+                            <p class="fs-3 fw-bold">담당의: 김간호</p>
+                            <p class="fs-3 fw-bold">진단명: 역류성 식도염</p>
+                            <p class="fs-3 mb-">A병동 201호 No.2</p>
+                        </div>
+                    </div>
+
+                    <div class="mb-5"></div>
+                    <div class="container px-lg-5">
+                    <div class="card-body text-center rounded-5 bg-light border-2">
+                        <div class="feature rounded-5 mb-3 mt-n5 w-100"><i class="btn btn-primary btn-lg fst-normal fs-2 fw-bold" href="#!" onClick="change();setColor(event);" >N2478155 전나약 여/28세</i></div>
+                            <p class="fs-3 fw-bold">담당의: 김간호</p>
+                            <p class="fs-3 fw-bold">진단명: 만성 기관지염</p>
+                            <p class="fs-3 mb-">A병동 201호 No.2</p>
+                        </div>
+                    </div>
+
+                    <div class="mb-5"></div>
+                    <div class="container px-lg-5">
+                    <div class="card-body text-center rounded-5 bg-light border-2">
+                        <div class="feature rounded-5 mb-3 mt-n5 w-100"><i class="btn btn-primary btn-lg fst-normal fs-2 fw-bold" href="#!" onClick="change();setColor(event);" >N3541651 윤러지 여/22세</i></div>
+                            <p class="fs-3 fw-bold">담당의: 김의사</p>
+                            <p class="fs-3 fw-bold">진단명: 당뇨</p>
+                            <p class="fs-3 mb-">A병동 201호 No.3</p>
+                        </div>
+                    </div>
+                
+                
+                    <div class="mb-5"></div>
+                    <div class="container px-lg-5">
+                    <div class="card-body text-center bg-light rounded-5 border-2">
+                        <div class="feature rounded-5 mb-3 mt-n5 w-100"><i class="btn btn-primary btn-lg fst-normal fs-2 fw-bold" href="#!" onClick="change();setColor(event);" >N5715454 이아픔 여/23세</i></div>
+                            <p class="fs-3 fw-bold">담당의: 김의사</p>
+                            <p class="fs-3 fw-bold">진단명: 심부전증</p>
+                            <p class="fs-3 mb-">A병동 201호 No.4</p>
+                        </div>
+                    </div>                
+                
+                    <div class="mb-5"></div>
+                    <div class="container px-lg-5">
+                    <div class="card-body text-center rounded-5 bg-light border-2">
+                        <div class="feature rounded-5 mb-3 mt-n5 w-100"><i class="btn btn-primary btn-lg fst-normal fs-2 fw-bold" href="#!" onClick="change();setColor(event);" >N2056465 김감기 남/78세</i></div>
+                            <p class="fs-3 fw-bold">담당의: 김의사</p>
+                            <p class="fs-3 fw-bold">진단명: 희귀 난치성 질환</p>
+                            <p class="fs-3 mb-">A병동 201호 No.2</p>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-6 col-xxl-6 mb-5"></div> 
+                   
+                </div>
+            </section>
+        </div>
+        
+        <!-- 오른쪽 화면 시작-->
+        <div class="right pt-0" align="center">
+
+            <!-- 윤지코드 통합 -->
+            <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+            <script type="text/javascript">
+                var first_totalV;
+                var first_injectionV;
+                var first_remaintime ; // 분단위
+                var first_gtt;
+
+                $( document ).ready(function() {
+                    function tost(){
+                        $.ajax({
+                            url: "http://13.125.238.253:3000/iv_info",
+                            type: "GET",
+                            data: {},
+                            dataType:'jsonp',
+                        }).success(function(data){
+                            first_totalV=parseInt(data.totalvalue);
+                            first_injectionV=parseInt(data.infusionvalue);
+                            first_remaintime=parseInt(data.remaintime);
+                            first_gtt=parseInt(data.gtt);
+
+                            $("#total_volume").html(first_totalV);
+                        });
+                        }
+                    });
+
+                $( document ).ready(function() {
+                    function test(){
+                        $.ajax({
+                            url: "http://13.125.238.253:3000/counting",
+                            type: "GET",
+                            data: {},
+                            dataType:'jsonp',
+                        }).success(function(data){
+                            passtime+=1;
+
+                            $("#cur_count").html(data.iv_info); 
+                            $("#cur_count").html(data.counting); 
+                            $("#cur_count").html(data.counting); 
+
+                            $("#cur_count").html(data.counting);  // 현재 카운팅 된 개수
+                            var cur_count=parseInt(data.counting);
+                            $("#cur_amount").html(((data.counting)*0.05).toFixed(2)); // 카운팅--> cc
+                            var cur_amount=parseFloat(((data.counting)*0.05).toFixed(2));
+                            $("#passtime").html(passtime);                            // 1초 
+                            $("#pre_amount").html(((0.25*passtime)*0.05).toFixed(2)); // 예측 값!! 40cc/hr    
+                            pre_amount=parseFloat(((0.25*passtime)*0.05).toFixed(2));  
+                            $("#dif_amount").html((cur_amount-pre_amount).toFixed(2)); // 현재 값 - 예측 값 
+                            setTimeout(() => $("#pre_count").html(data.counting), 60000); // 60초 이후 1초마다 업데이트
+                            pre_count=parseInt(data.counting);
+
+                            setTimeout(() => $("#gtt").html((pre_count-cur_count)), 60000); //  현재 값 - 1분 전 값
+                            setTimeout(() => $("#cc").html((pre_count-cur_count)*3), 60000); // 현재 값 - 1분 전 값
+                            setTimeout(() => $("#remainingTime").html((first_injectionV-cur_amount)/((pre_count-cur_count)*3)),60000);
+
+                            $("#remain_amount").html((first_injectionV-cur_amount));
+                            $("#remainingTime").html((first_injectionV-cur_amount)/((pre_count-cur_count)*3));
+                        });
+                        }
+                    var passtime = 0;
+                    test();
+                    setInterval(test,1000);
+                    });
+            
+            
+                        var Target = document.getElementById("clock");
+                        function clock() {
+                            var time = new Date();
+            
+                            var year = time.getFullYear();
+                            var month = time.getMonth();
+                            var date = time.getDate();
+                            var day = time.getDay();
+                            var week = ['SUN', 'MON', 'TUE', 'WED', 'THU', 'FRI', 'SAT'];
+            
+                            var hours = time.getHours();
+                            var minutes = time.getMinutes();
+                            var seconds = time.getSeconds();
+            
+                            Target.innerText =
+                            `${year}.${(month+1) < 10 ? `0${month+1}` : month+1}.${date < 10 ? `0${date}` : date} ${week[day]} ` +
+                            `${hours < 10 ? `0${hours}` : hours}:${minutes < 10 ? `0${minutes}` : minutes}:${seconds < 10 ? `0${seconds}` : seconds}`;
+            
+                        }
+                        clock();
+                        setInterval(clock, 1000); // 1초마다 실행
+            </script>
+
+            <script>
+
+                $("#OK").click(function()
+                {
+                    $.ajax(
+                        {
+                        url: '/postTest',
+                        async:true,
+                        type: 'POST',
+                        data: {test : $("#speed").val()},
+                        dataType: 'json',
+                        success: function(data)
+                        {
+
+                        },
+                        error: function(err)
+                        {
+                            alert("적절한 속도를 선택 하십시오 : 0(cc/hr) - 80(cc/hr)");
+                        }
+                        });
+                });
+                $("#speed").keydown(function(key)
+                {
+                    if (key.keyCode == 13)
+                    {
+                        $.ajax(
+                        {
+                        url: '/postTest',
+                        async:true,
+                        type: 'POST',
+                        data: {test : $("#speed").val()},
+                        dataType: 'json',
+                        success: function(data)
+                        {
+
+                        },
+                        error: function(err)
+                        {
+                            alert("적절한 속도를 선택 하십시오 : 0(cc/hr) - 80(cc/hr)");
+                        }
+                        });
+                    }
+                });
+                $("#button_up").click(function()
+                {
+                    $.ajax(
+                        {
+                        url: '/postTestUp',
+                        async:true,
+                        type: 'POST',
+                        data: {test : $("#speed").val()},
+                        dataType: 'json',
+                        success: function(data)
+                        {
+
+                            speed = document.getElementById("speed").value;
+                            if(parseInt(speed) < 80)
+                            {
+                                strspeed = parseInt(speed) + 1;
+                                strspeed = strspeed.toString();
+                                // alert(strspeed);
+                                // alert(typeof(strspeed));
+                                document.getElementById("speed").value = strspeed;
+                            }
+                        },
+                        error: function(err)
+                        {
+                            alert("전송 실패");
+                        }
+                    });
+                });
+                $("#button_down").click(function()
+                {
+                    $.ajax(
+                        {
+                        url: '/postTestDown',
+                        async:true,
+                        type: 'POST',
+                        data: {test : $("#speed").val()},
+                        dataType: 'json',
+                        success: function(data)
+                        {
+                            speed = document.getElementById("speed").value;
+                            if(parseInt(speed) > 0)
+                            {
+                                strspeed = parseInt(speed) - 1;
+                                strspeed = strspeed.toString();
+                                // alert(strspeed);
+                                // alert(typeof(strspeed));
+                                document.getElementById("speed").value = strspeed;
+                            }
+                        },
+                        error: function(err)
+                        {
+                            alert("전송 실패");
+                        }
+                    });
+                });
+            </script>
+
+            <!--------- video --------->    
+            <div class="rounded-5 w-100" id="video-box">
+                <i class="fst-normal fs-0 fw-bold" href="#!" >Live video</i>
+                <img src="http://10.2.52.51:3000/stream" width="90%" hight="90%">
+            </div>
+            <hr id="right_h"/>
+
+            <!--------- Time --------->
+            <div class="mb-0 pt-4" id="time-box">
+                <p class="fs-1 fw-bold text-center time-title" id="time_name" style="height:4vh !important; margin-block-end: 0rem;">Remaining Time</p>
+                <div class="time fs-3 textsDiv " style="height: 60%;">
+                    <div id="remainingTime" class="jb-th-1 fs-2 fw-normal rounded-1 text-center" type="text" style="font-size:15px; width:80%; text-align: center"> </div>
+                    <b class="fs-2 fw-light" style="width: 20%; text-align: left">sec</b>
+                </div>
+            </div>
+            <hr id="right_h"/>
+
+            <!--------- volume --------->
+            <div class="mb-0 pt-4" id="volumn-box">
+                <p class="fs-1 fw-bold text-center time-title" id="volumn_name" style="height: 4vh !important; margin-block-end: 0rem;">Injection volume</p>
+                <div id='l1' style="height: 75% !important; margin-top:3%; flex-direction: column;">
+                    <div class="jb-th-1 fs-2 fw-bold textsDiv" style="height: 33%; flex-direction: row;">
+                        <b style="text-align:center; width: 25%">Total volume:</b> <!-- 물주머니 양-->
+                        <div id="total_volume" class="jb-th-1 fs-2 fw-bold rounded-1 text-center" type="text" style="width: 55% font-size:15px;"> </div>
+                        <b class="fs-2 fw-light" style="width: 20%; text-align: left">(ml)</b>
+                    </div>
+
+                    <hr/>
+
+                    <div class="jb-th-1 fs-2 fw-bold textsDiv" style="height: 33%;">
+                        <b style="text-align:center; width: 25%">Current value:</b> <!-- 몸에 주입된 양-->
+                        <div id="cur_amount" class="jb-th-1 fs-2 fw-bold rounded-1 text-center" type="text" style="width: 55% font-size:15px;"> </div>
+                        <b class="fs-2 fw-light" style="width: 20%; text-align: left">(ml)</b>
+                    </div>
+
+                    <hr/>
+
+                    <div class="jb-th-1 fs-2 fw-bold textsDiv" style="height: 33%;">
+                        <b style="text-align:center; width: 25%"> remaining value:</b> <!-- 남은 주입 양-->
+                        <div id="remain_amount" class="jb-th-1 fs-2 fw-bold rounded-1 text-center" type="text" style="width: 55% font-size:15px;"> </div>
+                        <b class="fs-2 fw-light" style="width: 20%; text-align: left">(ml)</b>
+                    </div>
+                </div>
+            </div>
+            <hr id="right_h"/>
+
+            <!--------- Speed --------->
+            <div class="mb-0 pt-4" id="speed-box">
+                <p class="fs-1 fw-bold text-center time-title" id="speed_name" style="height: 4vh !important; margin-block-end: 0rem;">Current Flow Rate</p>
+                <div id='l2 textsDiv' style="height: 75% !important; margin-top: 1%;">
+                    <div class="fs-2 textsDiv " style="height: 50%;">
+                        <div id="gtt" class="jb-th-1 fs-2 rounded-2 me-2 fw-bold textsDiv" style="height: 50%; width: 80%;"> </div>
+                        <b class="fs-2 fw-light" style="width: 20%; text-align: left">(gtt/min)</b>
+                    </div>
+                    <hr/>
+                    <div class="fs-2 textsDiv " style="height: 50%;">
+                        <div id="cc" class="jb-th-1 fs-2 rounded-2 me-2 fw-bold" style="height: 50%; width: 80%;"> </div>
+                        <b class="fs-2 fw-light" style="width: 20%; text-align: left">(cc/hr)</b>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        </div>
+
+        <!-- 중간 화면 시작1 -->
+        <body onload="div_hide();">
+            <div class="mid2" id="mid2">
+                <div class="pt-12 me-5" style="text-align : left;">
+                    <img src="./logo2.png"  width="1387px" height="1073px">
+                </div>
+                <div class="mt-5 me-8" style="text-align : right;">
+                    <img src="name.png" width="330px" height="310px">
+                </div>
+            </div>
+            <div class="mid" id="mid">
+                <script>
+                    function Info_btnClick()
+                    {
+
+
+                    }
+                 </script>
+
+                 <!-- 중간 화면 시작1 -->
+                <!-- 왼쪽 ms 위 여백 pt -->
+                <div class="ms-5 pt-5">
+                    <!-- 테이블 시작 -->
+                    <table  width="2200" height="1100" border-1>
+                        <!-- 1행 -->
+                        <div class=" rounded-5  w-100"><i class="btn btn-hyomin btn-lg fst-normal fs-2 fw-bold" href="#!" >N2014350 나허약 남/27세</i></div>
+                        <div class="mb-5"></div>
+                        <h1 class="jb-th-1 fs-3 fw-bold ">◈ 지속주입약물 외</h1>
+
+
+                        <tr class="jb-th-1 fs-3 fw-bold text-center">
+                        <!-- 열 제목-->
+                            <th><input type="checkbox" name="box" onclick=selectAll(this)></th>
+                            <th> ! </th>
+                            <th>TYPE</th>
+                            <th>구분</th>
+                            <th>코드</th>
+                            <th>처방명</th>
+                            <th>C</th>
+                            <th>투여량</th>
+                            <th>투여단위</th>
+                            <th>투여방법</th>
+                            <th>간격</th>
+                            <th>투여방법내용</th>
+                            <th>횟수</th>
+                            <th>일수</th>
+
+                        </tr>
+                        <tr class="jb-th-1 fs-3 text-center">
+
+                        <th class="text-center"><input type="checkbox" name="box"></th>
+                        <td>yyy</td>
+                        <td>P</td>
+                        <td>정규</td>
+                        <td>XA-PETH25</td>
+                        <td>Pethidine hcl inj(Hana) [25mg]</td>
+                        <td>＠</td>
+                        <td>1</td>
+                        <td>AMP</td>
+                        <td>IVF</td>
+                        <td>Q6H</td>
+                        <td>1일 4회, 6시간 간격으로 정맥내 점적주사</td>
+                        <td> 4 </td>
+                        <td> </td>
+                        </tr>
+
+                        <tr class="jb-th-1 fs-3 text-center">
+
+                            <th class="text-center"><input type="checkbox" name="box"></th>
+                            <td> </td>
+                            <td>P</td>
+                            <td>정규</td>
+                            <td>XB-CNS50</td>
+                            <td>Normal saline inj(inno.N) [50ml]</td>
+                            <td></td>
+                            <td>1</td>
+                            <td>BAG</td>
+                            <td>IVF</td>
+                            <td>Q6H</td>
+                            <td>1일 4회, 6시간 간격으로 정맥내 점적주사</td>
+                            <td> 4 </td>
+                            <td> </td>
+                        </tr>
+
+                        <tr class="jb-th-1 fs-3 text-center">
+
+                            <th class="text-center"><input type="checkbox" name="box"></th>
+                            <td> </td>
+                            <td>P</td>
+                            <td>정규</td>
+                            <td>XB-CNS50</td>
+                            <td>Normal saline inj(inno.N) [50ml]</td>
+                            <td></td>
+                            <td>1</td>
+                            <td>BAG</td>
+                            <td>IVF</td>
+                            <td>Q6H</td>
+                            <td>1일 4회, 6시간 간격으로 정맥내 점적주사</td>
+                            <td> 4 </td>
+                            <td> </td>
+                        </tr>
+
+                        <tr class="jb-th-1 fs-3 text-center">
+
+                            <th class="text-center"><input type="checkbox" name="box"></th>
+                            <td> </td>
+                            <td>P</td>
+                            <td>정규</td>
+                            <td>XA-TRD50</td>
+                            <td>Tridol inj [50mg]</td>
+                            <td>＠</td>
+                            <td>1</td>
+                            <td>AMP</td>
+                            <td>IVF</td>
+                            <td>Q6H</td>
+                            <td>1일 4회, 6시간 간격으로 정맥내 점적주사</td>
+                            <td> 4 </td>
+                            <td> </td>
+                        </tr>
+
+                        <tr class="jb-th-1 fs-3 text-center">
+
+                            <th class="text-center"><input type="checkbox" name="box"></th>
+                            <td> </td>
+                            <td>P</td>
+                            <td>정규</td>
+                            <td>XA-KEROM30</td>
+                            <td>Keromin inj [30mg]</td>
+                            <td>＠</td>
+                            <td>1</td>
+                            <td>AMP</td>
+                            <td>IVF</td>
+                            <td>Q8H</td>
+                            <td>1일 3회, 8시간 간격으로 정맥내 점적주사</td>
+                            <td> 3 </td>
+                            <td> </td>
+                        </tr>
+
+                        <tr class="jb-th-1 fs-3 text-center">
+
+                            <th class="text-center"><input type="checkbox" name="box"></th>
+                            <td> </td>
+                            <td>P</td>
+                            <td>정규</td>
+                            <td>XB-CNS50</td>
+                            <td>Normal saline inj(inno.N) [50ml]</td>
+                            <td></td>
+                            <td>1</td>
+                            <td>BAG</td>
+                            <td>IVF</td>
+                            <td>Q6H</td>
+                            <td>1일 3회, 8시간 간격으로 정맥내 점적주사</td>
+                            <td> 3 </td>
+                            <td> </td>
+                        </tr>
+
+                        <tr class="jb-th-1 fs-3 text-center">
+
+                            <th class="text-center"><input type="checkbox" name="box"></th>
+                            <td> </td>
+                            <td></td>
+                            <td>정규</td>
+                            <td>XV-GAST20</td>
+                            <td>Gaster inj [20mg]</td>
+                            <td></td>
+                            <td>1</td>
+                            <td>VIA</td>
+                            <td>IVP</td>
+                            <td>Q12H</td>
+                            <td>1일 2회, 12시간 간격으로 정맥내 일시주사</td>
+                            <td> 2 </td>
+                            <td> </td>
+                        </tr>
+
+                        <tr class="jb-th-1 fs-3 text-center">
+
+                            <th class="text-center"><input type="checkbox" name="box"></th>
+                            <td> </td>
+                            <td></td>
+                            <td>정규</td>
+                            <td>XA-NDXOL15</td>
+                            <td>Nadoxol inj [15mg]</td>
+                            <td></td>
+                            <td>1</td>
+                            <td>AMP</td>
+                            <td>IVP</td>
+                            <td>Q8H</td>
+                            <td>1일 3회, 8시간 간격으로 정맥내 일시주사</td>
+                            <td> 3 </td>
+                            <td> </td>
+                        </tr>
+
+                        <tr class="jb-th-1 fs-3 text-center">
+
+                            <th class="text-center"><input type="checkbox" name="box"></th>
+                            <td> </td>
+                            <td></td>
+                            <td>정규</td>
+                            <td>XX-ZIB25</td>
+                            <td>Zibor inj [2500iu]</td>
+                            <td>＠</td>
+                            <td>1</td>
+                            <td>PFS</td>
+                            <td>SC</td>
+                            <td>Q24H</td>
+                            <td>1일 1회, 24시간 간격으로 피하주사</td>
+                            <td> 1 </td>
+                            <td> </td>
+                        </tr>
+
+                        <tr class="jb-th-1 fs-3 text-center">
+
+                            <th class="text-center"><input type="checkbox" name="box"></th>
+                            <td> </td>
+                            <td></td>
+                            <td>정규</td>
+                            <td>XA-NASEA.3</td>
+                            <td>Nasea inj [0.3mg]</td>
+                            <td></td>
+                            <td>1</td>
+                            <td>AMP</td>
+                            <td>IVP</td>
+                            <td>Q24H</td>
+                            <td>1일 1회, 24시간 간격으로 정맥내 일시주사</td>
+                            <td> 1 </td>
+                            <td> </td>
+                        </tr>
+
+                        <tr class="jb-th-1 fs-3 text-center">
+
+                            <th class="text-center"><input type="checkbox" name="box"></th>
+                            <td> </td>
+                            <td></td>
+                            <td>응급</td>
+                            <td>XA-MEXO10</td>
+                            <td>Macperan inj [10mg]</td>
+                            <td></td>
+                            <td>1</td>
+                            <td>AMP</td>
+                            <td>IVP</td>
+                            <td>Q8H</td>
+                            <td>1일 3회, 8시간 간격으로 정맥내 일시주사</td>
+                            <td> 3 </td>
+                            <td> </td>
+                        </tr>
+
+                        <tr class="jb-th-1 fs-3 text-center">
+
+                            <th class="text-center"><input type="checkbox" name="box"></th>
+                            <td> </td>
+                            <td></td>
+                            <td>추가</td>
+                            <td>XT-20AL100</td>
+                            <td>GC Albumin inj 20% [100ml]</td>
+                            <td></td>
+                            <td>1</td>
+                            <td>BTL</td>
+                            <td>IVF</td>
+                            <td>N/A</td>
+                            <td>1일 1회, 정맥내 점적주사</td>
+                            <td> 1 </td>
+                            <td> </td>
+                        </tr>
+
+                        <tr class="jb-th-1 fs-3 text-center">
+
+                            <th class="text-center"><input type="checkbox" name="box"></th>
+                            <td> </td>
+                            <td></td>
+                            <td>추가</td>
+                            <td>KANAB60</td>
+                            <td>Kanarb tab [60mg]</td>
+                            <td>＠</td>
+                            <td>1</td>
+                            <td>TAB</td>
+                            <td>PO</td>
+                            <td>DP</td>
+                            <td>1일 1회, 아침 식사 후에 복용</td>
+                            <td> 1 </td>
+                            <td> </td>
+                        </tr>
+                    </tr>
+
+                    </table>
+
+                    <table style="width:46.5%;float:left; " width="1100" height="400">
+
+                        <div class="mb-5"></div>
+                        <h1 class="jb-th-1 fs-3 fw-bold ">◈ 지속주입약물</h1>
+
+
+                        <tr class="jb-th-1 fs-3 fw-bold text-center">
+
+                            <th><input type="checkbox" name="box2" onclick=selectAll2(this)></th>
+                            <th> ! </th>
+                            <th>TYPE</th>
+                            <th>구분</th>
+                            <th>코드</th>
+                            <th>처방명</th>
+                            <th>C</th>
+                            <th>투여량</th>
+                            <th>투여단위</th>
+
+
+                        </tr>
+
+                        <tr class="jb-th-1 fs-3 text-center">
+
+                            <th rawspan="3" class="text-center"><input type="checkbox" name="box2"></th>
+                            <td rawspan="3">yyy</td>
+                            <td rawspan="3">P</td>
+                            <td rawspan="3">정규</td>
+                            <td rawspan="3">XB-JSDNK2</td>
+                            <td rawspan="3">Dectrose 5%/Na/K-2 inj [1000ml]</td>
+                            <td rawspan="3"></td>
+                            <td rawspan="3">1</td>
+                            <td rawspan="3">BAG</td>
+
+                        </tr>
+
+                    </table>
+
+                    <table style="width:50%;float:left;" width="1100" height="400" border-1>
+                        <tr class="jb-th-1 fs-3 text-center">
+                            <th>단위명</th>
+                            <th>00</th>
+                            <th>01</th>
+                            <th>02</th>
+                            <th>03</th>
+                            <th>04</th>
+                            <th>05</th>
+                            <th>06</th>
+                            <th>07</th>
+                            <th>08</th>
+                            <th>09</th>
+                            <th>10</th>
+                            <th>11</th>
+                            <th>12</th>
+                            <th>13</th>
+                            <th>14</th>
+                            <th>15</th>
+                            <th>16</th>
+                            <th>17</th>
+                            <th>18</th>
+                            <th>19</th>
+                            <th>20</th>
+                            <th>21</th>
+                            <th>22</th>
+                            <th>23</th>
+
+                        </tr>
+
+
+                        </tr>
+                        <tr class="jb-th-1 fs-3 fw-bold text-center">
+                            <td>Graph</td>
+                            <td colspan="3"></td>
+                            <td align="left" colspan="11"><input type="range" value="0" min="0" max="100" class="slider"></td>
+                            <td align="left" colspan="10"><input type="range" value="0" min="0" max="100" class="slider"></td>
+                        </tr>
+                        <tr class="jb-th-1 fs-3 fw-bold text-center">
+                            <td>cc/hr</td>
+                            <td colspan="3"></td>
+                            <td align="left" colspan="11">80</td>
+                            <td align="left" colspan="10">80</td>
+                        </tr>
+
+                    </table>
+
+                </div>
+            </div>
+        </body>
+
+    </body>
+</html>

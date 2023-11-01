@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="kr">
+  <head>
+    <meta charset="utf-8">
+    <title>data from mariadb</title>
+    <?php
+      $conn= mysqli_connect('192.168.0.63', 'root', 'pi','mysql');
+      if(mysqli_connect_error($conn)){
+          echo "error!"
+          exit();
+      }
+      $sql="SELECT * FROM counting";
+      $result=mysqli_query($conn,$sql);
+   
+      $board = mysqli_fetch_array($result);
+       echo $board['datetime'];  
+       echo $board['counting'];
+        
+     ?>
+  </body>
+</html>
